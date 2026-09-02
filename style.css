@@ -147,7 +147,7 @@ ul {
 }
 
 .logo-img {
-  height: 40px;
+  height: 45px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1597,7 +1597,7 @@ select.form-control option {
 }
 
 .footer-logo-img {
-  height: 35px;
+  height: 45px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
@@ -1851,7 +1851,7 @@ select.form-control option {
   width: 100%;
   height: 100%;
   border-radius: var(--radius-lg);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 2.2s cubic-bezier(0.16, 1, 0.3, 1);
   transform-style: preserve-3d;
   cursor: pointer;
 }
@@ -1963,6 +1963,8 @@ select.form-control option {
 
 /* ==========================================================================
    3D PERSPECTIVE FLIPPING BOOKS (3 TOP + 2 BOTTOM)
+   Auto-rotating flip animation — no tap/click required.
+   Each card flips open, holds, flips back, staggered across the 5 cards.
    ========================================================================== */
 .perspective-row {
   display: flex;
@@ -1988,7 +1990,6 @@ select.form-control option {
   perspective: 1000px;
   width: 260px;
   height: 330px;
-  cursor: pointer;
 }
 
 .flip-book-card {
@@ -1996,17 +1997,13 @@ select.form-control option {
   width: 100%;
   height: 100%;
   border-radius: 6px 4px 4px 6px;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transform-style: preserve-3d;
+  /* Same easing as the Purpose & Vision flip cards, slowed down slightly */
+  transition: transform 3.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Hover Tilt Effect when closed */
-.flip-book-wrapper:hover:not(.is-open) .flip-book-card {
-  transform: rotateY(-20deg) scale(1.04) translateX(-4px);
-}
-
-/* 180 Deg In-Place Open Flip */
-.flip-book-wrapper.is-open .flip-book-card {
+/* Flip open only the card under the cursor, same as Purpose & Vision */
+.flip-book-wrapper:hover .flip-book-card {
   transform: rotateY(180deg);
 }
 
