@@ -315,8 +315,8 @@ ul {
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 800;
+  font-size: clamp(1.7rem, 2.6vw, 2.6rem);
+  font-weight: 700;
   margin-bottom: 1.2rem;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -1593,21 +1593,25 @@ select.form-control option {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
 
 .footer-logo-img {
   height: 45px;
   width: auto;
+  display: block;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  margin: 0;
+  padding: 0;
 }
 
 .footer-minimal-desc {
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 1.75rem;
+  margin: 0 0 1.75rem 0;
   max-width: 580px;
 }
 
